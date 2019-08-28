@@ -1,0 +1,90 @@
+(9,0,-1)食べる, 喰べる (たべる): (1) to eat. (2) to live on (e.g. a salary), to live off, to subsist on.
+(6,0,-1)来る, 來る (くる): (1) to come (spatially or temporally), to approach, to arrive. (2) to come back, to do ... and come back. (3) to come to be, to become, to get, to grow, to continue. (4) to come from, to be caused by, to derive from. (5) to come to (i.e. "when it comes to spinach ...").
+(1,0,-1)繰り返す, くり返す, 繰りかえす, 繰返す (くりかえす): to repeat, to do something over again.
+(8,0,-1)真っ暗, 真暗 (まっくら): (1) total darkness, pitch dark. (2) bleak future, poor prospects.
+(9,1,-1)絶好調 (ぜっこうちょう): in perfect form, going swimmingly.
+(6,0,-1)味方, 身方, 御方 (みかた): friend, ally, supporter.
+(0,0,0)旧姓 (きゅうせい): one's former (maiden) name.
+(0,0,0)まがまがしい, 禍禍しい, 禍々しい, 曲が曲がしい, 曲曲しい, 曲々しい: (1) ominous, sinister, unlucky, ill-omened. (2) annoying. (3) appearing to be true.
+(0,1,-1)繰り広げる, 繰広げる, 繰り拡げる, 繰拡げる (くりひろげる): to unfold, to unroll, to open.
+(0,1,-1)成功 (せいこう): success, hit.
+(0,0,0)現役 (げんえき): (1) active duty, active service. (2) student taking (university) entrance exams while still enrolled in school, student who passed their university entrance exams on the first try.
+(0,0,-1)募集 (ぼしゅう): recruiting, taking applications.
+(1,1,-1)初発 (しょはつ): start, first departure.
+(1,0,-1)大げさ, 大袈裟 (おおげさ): grandiose, exaggerated.
+(2,0,-1)途端 (とたん): just (now, at the moment, etc.).
+(0,0,-1)逃避 (とうひ): escape, evasion, flight.
+(1,0,-1)謝る (あやまる): to apologize, to apologise.
+(0,0,-1)放送 (ほうそう): broadcast, broadcasting.
+(5,0,-1)響き渡る, 響きわたる (ひびきわたる): to resound, to echo, to reverberate.
+(2,0,-1)激しい, 劇しい, 烈しい (はげしい): (1) violent, furious, tempestuous. (2) extreme, intense, fierce. (3) fervent, vehement. (4) incessant, relentless.
+(3,0,0)入学式 (にゅうがくしき): school entrance ceremony.
+(1,1,0)綿密 (めんみつ): minute, detailed, careful, scrupulous, thorough.
+(1,0,-1)予備 (よび): preparation, preliminaries, reserve, spare.
+(1,0,-1)機能 (きのう): function, facility, faculty, feature.
+(2,0,-1)技術 (ぎじゅつ): art, craft, technique, technology, engineering, skill.
+(0,0,0)帰巣 (きそう, きすう): homing (instinct).
+(4,0,0)本能 (ほんのう): instinct.
+(1,0,0)予算 (よさん): estimate, budget.
+(3,0,391)苦労, 苦勞 (くろう): troubles, hardships.
+(3,1,0.0)済む, 濟む (すむ): (1) to finish, to end, to be completed. (2) to merely result in something less severe than expected. (3) to feel at ease. (4) to feel unease or guilt for troubling someone, to be sorry.
+(2,0,-1)乱暴, 亂暴 (らんぼう): rude, violent, rough, lawless, unreasonable, reckless.
+(1,0,-1)進捗 (しんちょく): progress, under way.
+(1,0,0)脱出 (だっしゅつ): (1) escape, break-out. (2) prolapse, proptosis.
+(0,0,0)目標 (もくひょう): mark, objective, target.
+(1,0,-1)達成, たっ成 (たっせい): achievement.
+(0,0,0)看病 (かんびょう): nursing (a patient).
+(0,0,0)素材 (そざい): raw materials, subject matter.
+(0,0,0)採集 (さいしゅう): collecting, gathering.
+(1,0,-1)箇所, 個所, か所, カ所, ケ所, ヶ所 (かしょ): passage, place, point, part.
+(0,0,0)清潔 (せいけつ): (1) clean, hygienic, sanitary. (2) pure, virtuous, immaculate.
+(0,0,0)適度 (てきど): moderate.
+(1,0,0)効率 (こうりつ): efficiency, efficacy, performance, utility factor.
+(2,0,0)個数, 箇数 (こすう): number of articles, quantity.
+(0,0,0)大胸筋 (だいきょうきん): pectoralis major muscle.
+(0,0,0)強化 (きょうか): strengthen, intensify, reinforce, solidify, enhancement.
+(4,0,-1)溶接機 (ようせつき): welding machine.
+(2,0,-1)回復, 快復, 恢復 (かいふく): (1) restoration, rehabilitation, recovery, return, replevin, improvement. (2) recovery (from an illness), recuperation, convalescence.
+(2,0,-1)親密 (しんみつ): intimacy, friendship.
+(0,0,90)発生 (はっせい): (1) outbreak, spring forth, occurrence, incidence. (2) generation (e.g. of power or heat), genesis, origin. (3) ontogeny, development of complex multicellular structures from cell(s) in a simple state.
+(0,0,59)本編, 本篇 (ほんぺん): (1) original story, original version. (2) this volume.
+(0,0,88)前提 (ぜんてい): preamble, premise, reason, prerequisite, condition, assumption, hypothesis, given.
+(0,1,-1)調子 (ちょうし): (1) tune, tone, key, pitch, time, rhythm. (2) vein, mood, way, manner, style, knack. (3) condition, state of health. (4) impetus, spur of the moment, strain. (5) trend.
+(2,0,-1)焼く, 燬く, 焚く (やく): (1) to burn. (2) to roast, to broil, to grill, to bake, to toast, to barbecue. (3) to heat, to heat up. (4) to make (charcoal, pottery, bricks, etc.), to bake, to fire, to burn. (5) to tan (i.e. suntan), to burn. (6) to print (a photo), to burn (an optical disc). (7) to be jealous of, to be envious of, to envy.
+(0,0,0)出刃包丁, 出刃庖丁 (でばぼうちょう): knife, pointed carver.
+(0,0,-1)理系 (りけい): science.
+(0,0,58)素材 (そざい): raw materials, subject matter.
+(1,0,51)芸術, 藝術 (げいじゅつ): (fine) art, the arts.
+(0,0,0)購買部 (こうばいぶ): school store, co-op.
+(4,0,0.0)発散 (はっさん): (1) emission, emanation, radiation, diffusion, dispersion. (2) letting out (feelings), venting. (3) divergence (of light). (4) divergence.
+(0,0,90)魂 (たましい, たま, コン): (1) soul (2) spirit
+(0,0,0)研究 (けんきゅう): study, research, investigation.
+(0,0,0)包帯, 繃帯 (ほうたい): bandage, dressing.
+(0,0,0)遠慮 (えんりょ): (1) reserve, constraint, restraint, modesty, diffidence, hesitation, holding back, discretion, tact, thoughtfulness. (2) declining, refraining. (3) forethought, foresight.
+(0,0,-1)楽譜 (がくふ): score, sheet music.
+(1,0,-1)鋼鉄 (こうてつ): steel.
+(4,0,17)普段 (ふだん): usual, habitual, ordinary, everyday, always.
+(1,0,-1)鍛える (きたえる): (1) to forge, to temper. (2) to drill, to train, to discipline.
+(4,0,19)痛感 (つうかん): feeling keenly, fully realizing.
+(0,0,61)役に立つ (やくにたつ): to be helpful, to be useful.
+(0,0,0)雑談 (ざつだん): chatting, idle talk.
+(0,0,0)包帯, 繃帯 (ほうたい): bandage, dressing.
+(0,0,0)水彩絵の具 (すいさいえのぐ): watercolors, watercolours, watercolor paint, watercolour paint.
+(0,0,0)奇麗, 綺麗 (きれい): (1) pretty, lovely, beautiful, fair. (2) clean, clear, pure, tidy, neat. (3) completely, entirely.
+(0,0,40)盛り (さかり): (1) peak (e.g. of cherry blossom season), height (e.g. of summer). (2) prime (of one's life), one's best days. (3) rutting, being in heat.
+(0,0,0)遊具 (ゆうぐ): play equipment, playground equipment.
+(0,0,0)武器 (ぶき): (1) weapon, arms, ordnance. (2) weapon (something used to gain an advantage), asset.
+(0,0,0)薄暗い (うすぐらい): dim, gloomy.
+(0,0,0)目標 (もくひょう): mark, objective, target.
+(0,0,0)武装 (ぶそう): arms, armament.
+(0,0,0)軽蔑, 軽べつ (けいべつ): scorn, disdain.
+(0,0,0)期待 (きたい): expectation, anticipation, hope.
+(0,0,0)貞操 (ていそう): chastity, virtue, fidelity.
+(1,1,-1)野獣 (やじゅう): beast, monster, wild animal.
+(2,0,-1)徹夜 (てつや): all night, all-night vigil, sleepless night.
+(1,0,-1)銭湯, 洗湯 (せんとう): bath-house, public bath.
+(1,0,2054)キュン死, きゅん死 (キュンし, きゅんし): one's chest tightening up (from emotion) so much that one feels one's heart might stop, "dying of cuteness".
+(4,0,0)建物 (たてもの): building.
+(1,1,5071)腕立 (うでたて): push-up.
+(0,0,0)腹筋 (ふっきん, ふくきん, はらすじ): (1) sit-up. (2) abdominal muscles, abs.
+(0,0,0)引き受ける, 引受ける, 引受る (ひきうける): (1) to be responsible for. (2) to take over, to take up. (3) to guarantee, to undertake. (4) to contract (a disease).
