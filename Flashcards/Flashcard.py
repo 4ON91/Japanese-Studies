@@ -19,6 +19,8 @@ This program is made with the purpose of keeping track of your memorization prog
 whatever words you pick out. It keeps track of your response time and how often you're right and
 adjusts the chances of picking out random words you don't know.
 
+Also here's a very important note: Use the handwriting IME pad and don't use romaji conversion, because that's cheating.
+
 """
 TIME_SWITCH = False
 TIME_TOTAL = float(0)
