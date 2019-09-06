@@ -1,0 +1,282 @@
+import random, tkinter as tk, re
+
+class Application(tk.Frame):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.file = "word_list_example.txt"
+        
+        self.words = self.openFile()
+        
+        self.reactionTimer = 0
+        self.running = True
+
+        self.currentWord = self.getWordRoll()
+
+        self.right = self.currentWord[2]
+        self.wrong = self.currentWord[3]
+
+        self.wrongIncrementor = 1
+        self.rightIncrementor = 6
+        
+        self.master = master
+        self.pack()
+        self.create_widgets()
+
+    def getPercentage(self, x, y):
+        x = float(x)
+        y = float(y)
+        percentage = float(0)
+        try:
+            percentage = (x*100)/y
+        except ZeroDivisionError:
+            percentage = 0
+        return(percentage)
+    
+    def openFile(self):
+        wordFile = open(self.file, "r+", encoding = "UTF-8")
+        words = []
+        for line in wordFile:
+            if len(line) == 0 and line == "":
+                continue
+            else:
+                words.append(line)
+        wordFile.close()
+        return(words)
+
+    def saveFile(self):
+        newSave = ""
+        for line in self.words:
+            newSave += line
+        newFile = open(self.file, "w", encoding = "UTF-8")
+        newFile.write(newSave)
+        newFile.close()
+        print("file saved")
+
+    def getPercentage(self, x, y):
+        x = float(x)
+        y = float(y)
+        percentage = float(0)
+        try:
+            percentage = (x*100)/y
+        except ZeroDivisionError:
+            percentage = 0
+        return(percentage)
+
+    def getWordRoll(self):
+        rng = random.randrange(0, len(self.words))
+
+        互reg = re.compile(r'\((\d*),(\d*),([-0-9.]*)\)(\D*)\((\D*)\): (.*)')
+        意味reg = re.compile(r'\(\d*\) .*?\.')
+        cl = self.words[rng].replace("\n", " ")
+
+        cl = 互reg.findall(cl)[0]
+        
+        正   = int(cl[0])
+        誤   = int(cl[1])
+        時間  = float(cl[2])
+        漢字  = cl[3].replace(" ", "").split(',')
+        カナ  = cl[4]
+        意味  = cl[5]
+        
+        REGEX003 = re.compile(r'\(\d*\) .*?\.')
+        
+        a = REGEX003.findall(意味)
+        b = ""
+        
+        for x in range(0, len(a)):
+            b += a[x] + "\n"
+
+        print("意味: ", 意味)
+        print("b: ", b)
+        if len(b) == 0:
+            意味 = 意味
+        else:
+            意味 = b
+        total = 正 + 誤
+        if total == 0:
+            時間 = -1
+        address = rng
+
+        accuracy = self.getPercentage(正,total)
+        inaccuracy = self.getPercentage(誤,total)
+            
+        print("正:{:<4}誤:{:<4}合計:{:<4}不正確:{:<6}".format(
+            正,
+            誤,
+            total,
+            round(inaccuracy, 2)))
+
+        
+        if inaccuracy <= 20:
+            roll_limit = 20
+        else:
+            roll_limit = inaccuracy
+
+        if total == 0:
+            roll_limit = 100
+        
+        negative_range = int( -inaccuracy/10 )
+        positive_range = int(    accuracy/10 )
+
+        scaling_step = float(3/60)
+
+        scaling = float(0.5 + scaling_step * total)
+        
+        rolls = int(total + 1)
+        roll_sum = int(0)
+        
+        for x in range(1, rolls):
+            roll_sum += random.randrange(negative_range, positive_range)
+        
+        roll_sum = roll_sum * scaling
+        print("roll sum: ", roll_sum)
+        
+        if roll_sum >= roll_limit:
+            print("Rerolled on 「%s」\n"%漢字)
+            return(self.getWordRoll())
+
+        return([カナ,漢字,正,誤,時間,意味, address])
+
+    def resetText(self):
+        self.systemMessage_label.configure(text='')
+        
+    def compare(self, context):
+        try:
+            カナ,漢字,正,誤,時間,意味,所 = self.currentWord
+            
+            if self.userGuessString.get() in 漢字:
+                self.userGuessString.set("")
+                new_time = self.reactionTimer
+                if(時間>new_time or 時間<=0 or 時間==-1 or 正+誤==0):
+                    時間 = new_time
+                
+                self.systemMessage_label.configure(text="それは正しいです。",
+                                                   justify='left',
+                                                   font=("Courier", 10))
+                self.systemMessage_label.after(1000, self.resetText)
+                
+                self.currentWord[2] += self.rightIncrementor
+                
+                old_stats = re.compile(r'\(\d*,\d*,[-0-9.]*\)')
+                new_stats = "(%s,%s,%s)"%(self.currentWord[2],
+                                          self.currentWord[3],
+                                          時間)
+                
+                self.words[所] = re.sub(old_stats,new_stats,self.words[所])
+                
+                self.wrongIncrementor = 1
+                self.rightIncrementor = 6
+
+                new_word = self.getWordRoll()
+                
+                if new_word == self.currentWord:
+                    self.rightIncrementor += 1
+                    
+                self.currentWord = new_word
+                
+                
+                self.reactionTimer = 0
+
+            else:
+                self.userGuessString.set("")
+                self.currentWord = self.currentWord
+
+                
+                self.systemMessage_label.configure(text=漢字, font=("Courier", 44))
+                self.systemMessage_label.after(1500, self.resetText)
+                self.currentWord[3] += self.wrongIncrementor
+                
+                old_stats = re.compile(r'\(\d*,\d*,[-0-9.]*\)')
+                new_stats = "(%s,%s,%s)"%(self.currentWord[2],
+                                          self.currentWord[3],
+                                          時間)
+                self.words[所] = re.sub(old_stats,new_stats,self.words[所])
+
+                self.wrongIncrementor += 1
+                self.rightIncrementor -= 2
+                if self.rightIncrementor <= 0:
+                    self.rightIncrementor = 0
+
+            self.updateLabels()
+                    
+                
+            self.saveFile()
+            
+        except IndexError:
+            print("A line wasn't properly formatted: ")
+            print("\t", self.currentWord)
+            pass
+
+
+    def updateLabels(self):
+        self.kana_label.configure(text=self.currentWord[0],
+                                  justify='left',
+                                  font=("Courier", 20))
+        self.meaning_label.configure(text=self.currentWord[5],
+                                     justify="left",
+                                     font=("Courier", 10),
+                                     relief='sunken')
+
+        self.stats_label.configure(text="正:{:<3} 誤:{:<3}".format(
+            self.currentWord[2], self.currentWord[3]))
+        
+    def create_widgets(self):
+
+
+        self.stats_label = tk.Label(self)
+        self.stats_label.grid(column=0, row=1)
+        
+        self.systemMessage_label = tk.Label(self)
+        self.systemMessage_label.grid(column=0, row=2)
+        self.systemMessage_label.configure(text="Guess kanji using only the IME pad",
+                                           justify='left',
+                                           font=("Courier", 10))
+        
+        self.currentTime_label = tk.Label(self)
+        self.currentTime_label.grid(column=0, row=0)
+        self.currentTime_label.configure(text=self.format_timerDisplay(self.reactionTimer)+"\n"+
+                                         self.format_timerDisplay(self.currentWord[4]),
+                                         justify='left',
+                                         font=("Courier", 10))
+        
+        self.kana_label = tk.Label(self)
+        self.kana_label.grid(column=1,row=0)
+        
+        self.meaning_label = tk.Label(self)
+        self.meaning_label.grid(column=1, row=1)
+        
+        self.userGuessString = tk.StringVar()
+        self.guessEntry = tk.Entry(self)
+        self.guessEntry['text'] = self.userGuessString
+        self.guessEntry.grid(column=2,row=0)
+        self.guessEntry.bind('<Key-Return>',
+                        self.compare)
+
+        
+
+        self.currentTime_label.after(1000, self.refresh_timerDisplay)
+        self.updateLabels()
+
+    def format_timerDisplay(self, time):
+        a = time
+        hours = int(a/60**2)
+        a -= hours*60**2
+        minutes = int(a/60)
+        time -= minutes*60
+        seconds = int(time)
+        formattedTimer = "{:>02}:{:>02}".format(minutes, seconds)
+        return(formattedTimer)
+        
+    def refresh_timerDisplay(self):
+        self.reactionTimer += 1
+        self.currentTime_label.configure(text=self.format_timerDisplay(self.reactionTimer)+"\n"+
+                                         self.format_timerDisplay(self.currentWord[4]),
+                                         justify='left',
+                                         font=("Courier", 10))
+        self.currentTime_label.after(1000, self.refresh_timerDisplay)
+        
+root = tk.Tk()
+app = Application(master=root)
+
+
+app.mainloop()
